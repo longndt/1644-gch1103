@@ -22,7 +22,7 @@ mongoose.connect(uri)
 .then(() => console.log('connect to db succeed'))
 .catch(err => console.log(err));
 
-//khai báo dateFormat của hbs
+//khai báo dateFormat & equal của hbs
 var hbs = require('hbs');
 hbs.registerHelper('dateFormat', require('handlebars-dateformat')); 
 
