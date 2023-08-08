@@ -29,13 +29,13 @@ router.post('/add', async (req, res) => {
    res.redirect('/student');
 });
 
-router.get('/update/:id', async (req, res) => {
+router.get('/edit/:id', async (req, res) => {
    var id = req.params.id;
    var student = await StudentModel.findById(id);
    res.render('student/studentEdit', { student: student });
 });
 
-router.post('/update/:id', async (req, res) => {
+router.post('/edit/:id', async (req, res) => {
    // var id = req.params.id;
    // var student = req.body;
    await StudentModel.findByIdAndUpdate(req.params.id, req.body)
