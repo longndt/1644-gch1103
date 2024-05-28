@@ -13,12 +13,12 @@ var app = express();
 var mongoose = require('mongoose');
 var uri = "mongodb+srv://longndt:wxpY5GLB4We8hTDQ@cluster0.cc35aqx.mongodb.net/gch1103";
 mongoose.connect(uri)
-.then(console.log('Connect succeed !'))
-.catch(err => console.log('Connect failed !'));
+  .then(console.log('Connect succeed !'))
+  .catch(err => console.log('Connect failed !'));
 
 //IMPORTANT: cấu hình cors (để frontend gọi api)
 var cors = require('cors');
-app.use(cors());  
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,12 +34,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
